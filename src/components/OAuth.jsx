@@ -1,12 +1,12 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, MicrosoftAuthProvider} from 'firebase/auth'
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, GithubAuthProvider} from 'firebase/auth'
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
 import googleIcon from '../assets/svg/googleIcon.svg'
 import facebookIcon from '../assets/svg/facebookIcon.svg'
-import microsoftIcon from '../assets/svg/microsoftIcon.svg'
+import githubIcon from '../assets/svg/githubIcon.svg'
 
 function OAuth() {
   const navigate = useNavigate()
@@ -87,6 +87,32 @@ function OAuth() {
     }
   }*/
 
+  const onGitHubClick = async () => {
+    try {
+      const auth = getAuth()
+      const provider = new GithubAuthProvider()
+      const result = await signInWithPopup(auth, provider)
+      const user = result.user
+
+      // Check for user
+      const docRef = doc(db, 'users', user.uid)
+      const docSnap = await getDoc(docRef)
+
+      // If user, doesn't exist, create user
+      if (!docSnap.exists()) {
+        await setDoc(doc(db, 'users', user.uid), {
+          name: user.displayName,
+          email: user.email,
+          timestamp: serverTimestamp(),
+        })
+      }
+      navigate('/')
+    } catch (error) {
+      toast.error('Could not authorize with GitHub')
+    }
+  }
+
+
   return (
     <div className='socialLogin'>
       <p>Sign {location.pathname === '/sign-up' ? 'up' : 'in'} with </p>
@@ -95,6 +121,9 @@ function OAuth() {
       </button>
       <button className='socialIconDiv' onClick={onFacebookClick}>
         <img className='socialIconImg' src={facebookIcon} alt='facebook' />
+      </button>
+      <button className='socialIconDiv' onClick={onGitHubClick}>
+        <img className='socialIconImg' src={githubIcon} alt='github' />
       </button>
     </div>
   )
