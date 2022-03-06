@@ -68,7 +68,7 @@ function OAuth() {
     try {
       const auth = getAuth()
       const provider = new MicrosoftAuthProvider()
-      const result = await signInWithPopup(auth, provider)
+      const result = await linkWithPopup(auth, provider)
       const user = result.user
 
       // Check for user
