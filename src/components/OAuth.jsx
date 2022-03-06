@@ -64,7 +64,7 @@ function OAuth() {
     }
   }
 
- /* const onMicrosoftClick = async () => {
+ const onMicrosoftClick = async () => {
     try {
       const auth = getAuth()
       const provider = new MicrosoftAuthProvider()
@@ -87,7 +87,7 @@ function OAuth() {
     } catch (error) {
       toast.error('Could not authorize with Microsoft')
     }
-  }*/
+  }
 
   const onGitHubClick = async () => {
     try {
@@ -155,7 +155,7 @@ function OAuth() {
       </button>
       </th>
       <th>
-      <button className='socialIconDiv'>
+      <button className='socialIconDiv' onClick={onMicrosoftClick}>
         <img className='socialIconImg' src={microsoftIcon} alt='microsoft' />
       </button></th>
       <th>
