@@ -9,6 +9,7 @@ import facebookIcon from '../assets/svg/facebookIcon.svg'
 import microsoftIcon from '../assets/svg/microsoftIcon.svg'
 import githubIcon from '../assets/svg/githubIcon.svg'
 import twitterIcon from '../assets/svg/twitterIcon.svg'
+import yahooIcon from '../assets/svg/yahooIcon.svg'
 
 function OAuth() {
   const navigate = useNavigate()
@@ -139,6 +140,31 @@ function OAuth() {
     }
   }
 
+  const onYahooClick = async () => {
+    try {
+      const auth = getAuth()
+      const provider = new new OAuthProvider('yahoo.com')
+      const result = await signInWithPopup(auth, provider)
+      const user = result.user
+
+      // Check for user
+      const docRef = doc(db, 'users', user.uid)
+      const docSnap = await getDoc(docRef)
+
+      // If user, doesn't exist, create user
+      if (!docSnap.exists()) {
+        await setDoc(doc(db, 'users', user.uid), {
+          name: user.displayName,
+          email: user.email,
+          timestamp: serverTimestamp(),
+        })
+      }
+      navigate('/')
+    } catch (error) {
+      toast.error('Could not authorize with Yahoo')
+    }
+  }
+
   return (
     <div className='socialLogin'>
       <p>Sign {location.pathname === '/sign-up' ? 'up' : 'in'} with </p>
@@ -165,6 +191,10 @@ function OAuth() {
       <th>
       <button className='socialIconDiv' onClick={onTwitterClick}>
         <img className='socialIconImg' src={twitterIcon} alt='twitter' />
+      </button></th>
+      <th>
+      <button className='socialIconDiv' onClick={onYahooClick}>
+        <img className='socialIconImg' src={yahooIcon} alt='yahoo' />
       </button></th>
       </tr>
       </table>
