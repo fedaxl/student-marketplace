@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from 'firebase/auth'
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, MicrosoftAuthProvider} from 'firebase/auth'
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
@@ -62,7 +62,7 @@ function OAuth() {
     }
   }
 
-  const onMicrosoftClick = async () => {
+ /* const onMicrosoftClick = async () => {
     try {
       const auth = getAuth()
       const provider = new MicrosoftAuthProvider()
@@ -85,8 +85,7 @@ function OAuth() {
     } catch (error) {
       toast.error('Could not authorize with Microsoft')
     }
-  }
-
+  }*/
 
   return (
     <div className='socialLogin'>
@@ -96,9 +95,6 @@ function OAuth() {
       </button>
       <button className='socialIconDiv' onClick={onFacebookClick}>
         <img className='socialIconImg' src={facebookIcon} alt='facebook' />
-      </button>
-      <button className='socialIconDiv' onClick={onMicrosoftClick}>
-        <img className='socialIconImg' src={microsoftIcon} alt='microsoft' />
       </button>
     </div>
   )
