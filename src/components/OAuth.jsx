@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, MicrosoftAuthProvider, GithubAuthProvider, TwitterAuthProvider} from 'firebase/auth'
+import { getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, OAuthProvider, GithubAuthProvider, TwitterAuthProvider} from 'firebase/auth'
 import { doc, setDoc, getDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
@@ -67,8 +67,8 @@ function OAuth() {
  const onMicrosoftClick = async () => {
     try {
       const auth = getAuth()
-      const provider = new MicrosoftAuthProvider()
-      const result = await linkWithPopup(auth, provider)
+      const provider = new OAuthProvider('microsoft.com')
+      const result = await signInWithPopup(auth, provider)
       const user = result.user
 
       // Check for user
