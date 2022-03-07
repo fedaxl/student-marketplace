@@ -210,7 +210,7 @@ function CreateListing() {
   }
 
   if (loading) {
-    return <Spinner />
+    return <Spinner></Spinner>
   }
 
   return (
