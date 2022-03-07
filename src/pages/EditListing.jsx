@@ -21,10 +21,9 @@ function EditListing() {
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
-    bedrooms: 1,
-    bathrooms: 1,
-    parking: false,
-    furnished: false,
+    quantity: 1,
+    year: 1,
+    status: false,
     address: '',
     offer: false,
     regularPrice: 0,
@@ -37,10 +36,9 @@ function EditListing() {
   const {
     type,
     name,
-    bedrooms,
-    bathrooms,
-    parking,
-    furnished,
+    quantity,
+    year,
+    sold,
     address,
     offer,
     regularPrice,
@@ -289,12 +287,12 @@ function EditListing() {
 
           <div className='formRooms flex'>
             <div>
-              <label className='formLabel'>Bedrooms</label>
+              <label className='formLabel'>Quantity</label>
               <input
                 className='formInputSmall'
                 type='number'
-                id='bedrooms'
-                value={bedrooms}
+                id='quantity'
+                value={quantity}
                 onChange={onMutate}
                 min='1'
                 max='50'
@@ -302,12 +300,12 @@ function EditListing() {
               />
             </div>
             <div>
-              <label className='formLabel'>Bathrooms</label>
+              <label className='formLabel'>Year</label>
               <input
                 className='formInputSmall'
                 type='number'
-                id='bathrooms'
-                value={bathrooms}
+                id='year'
+                value={year}
                 onChange={onMutate}
                 min='1'
                 max='50'
@@ -316,12 +314,12 @@ function EditListing() {
             </div>
           </div>
 
-          <label className='formLabel'>Parking spot</label>
+          <label className='formLabel'>Status: Sold?</label>
           <div className='formButtons'>
             <button
-              className={parking ? 'formButtonActive' : 'formButton'}
+              className={sold ? 'formButtonActive' : 'formButton'}
               type='button'
-              id='parking'
+              id='sold'
               value={true}
               onClick={onMutate}
               min='1'
@@ -331,36 +329,10 @@ function EditListing() {
             </button>
             <button
               className={
-                !parking && parking !== null ? 'formButtonActive' : 'formButton'
+                !sold && sold !== null ? 'formButtonActive' : 'formButton'
               }
               type='button'
-              id='parking'
-              value={false}
-              onClick={onMutate}
-            >
-              No
-            </button>
-          </div>
-
-          <label className='formLabel'>Furnished</label>
-          <div className='formButtons'>
-            <button
-              className={furnished ? 'formButtonActive' : 'formButton'}
-              type='button'
-              id='furnished'
-              value={true}
-              onClick={onMutate}
-            >
-              Yes
-            </button>
-            <button
-              className={
-                !furnished && furnished !== null
-                  ? 'formButtonActive'
-                  : 'formButton'
-              }
-              type='button'
-              id='furnished'
+              id='sold'
               value={false}
               onClick={onMutate}
             >

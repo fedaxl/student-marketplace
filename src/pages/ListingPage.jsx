@@ -96,17 +96,16 @@ function Listing() {
 
         <ul className='listingDetailsList'>
           <li>
-            {listing.bedrooms > 1
-              ? `${listing.bedrooms} Bedrooms`
-              : '1 Bedroom'}
+            {listing.quantity > 1
+              ? `${listing.quantity} Quantity`
+              : '1 Item'}
           </li>
           <li>
-            {listing.bathrooms > 1
-              ? `${listing.bathrooms} Bathrooms`
-              : '1 Bathroom'}
+            {listing.year > 1
+              ? `${listing.year} Year`
+              : '2022'}
           </li>
-          <li>{listing.parking && 'Parking Spot'}</li>
-          <li>{listing.furnished && 'Furnished'}</li>
+          <li>{listing.sold && 'Item Sold?'}</li>
         </ul>
 
         <p className='listingLocationTitle'>Location</p>
