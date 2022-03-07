@@ -307,8 +307,8 @@ function EditListing() {
                 id='year'
                 value={year}
                 onChange={onMutate}
-                min='1'
-                max='50'
+                min='1990'
+                max='3000'
                 required
               />
             </div>

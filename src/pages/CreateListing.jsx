@@ -21,7 +21,7 @@ function CreateListing() {
     type: 'rent',
     name: '',
     quantity: 1,
-    year: 1,
+    year: 2022,
     sold: false,
     address: '',
     offer: false,
@@ -275,8 +275,8 @@ function CreateListing() {
                 id='year'
                 value={year}
                 onChange={onMutate}
-                min='1'
-                max='50'
+                min='1990'
+                max='3000'
                 required
               />
             </div>
