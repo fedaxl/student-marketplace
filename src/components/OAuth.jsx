@@ -143,7 +143,7 @@ function OAuth() {
   const onYahooClick = async () => {
     try {
       const auth = getAuth()
-      const provider = new new OAuthProvider('yahoo.com')
+      const provider = new OAuthProvider('yahoo.com')
       const result = await signInWithPopup(auth, provider)
       const user = result.user
 
@@ -164,6 +164,8 @@ function OAuth() {
       toast.error('Could not authorize with Yahoo')
     }
   }
+
+  //Apple requires to be part of their Apple Developer Program so this option won't be available.
 
   return (
     <div className='socialLogin'>
