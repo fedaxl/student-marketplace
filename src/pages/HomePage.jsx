@@ -41,7 +41,7 @@ function HomePage() {
           </table>
         </div>
       </main>
-    </div>
+    </div>            
   )
 }
 

@@ -15,7 +15,7 @@ import Spinner from '../components/Spinner'
 
 function CreateListing() {
   // eslint-disable-next-line
-  const [geolocationEnabled, setGeolocationEnabled] = useState(true)
+  const [geolocationEnabled, setGeolocationEnabled] = useState(false)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     type: 'rent',
@@ -23,7 +23,7 @@ function CreateListing() {
     quantity: 1,
     year: 2022,
     sold: false,
-    address: '',
+    address: '1600+Amphitheatre+Parkway,+Mountain+View,+CA',
     offer: false,
     regularPrice: 0,
     discountedPrice: 0,
@@ -111,7 +111,7 @@ function CreateListing() {
     } else {
       geolocation.lat = latitude
       geolocation.lng = longitude
-    }
+    } 
 
     // Store image in firebase
     const storeImage = async (image) => {
@@ -381,7 +381,7 @@ function CreateListing() {
               max='750000000'
               required
             />
-            {type === 'rent' && <p className='formPriceText'>$ / Month</p>}
+            {type === 'rent' && <p className='formPriceText'>€ / Month</p>}
           </div>
 
           {offer && (
