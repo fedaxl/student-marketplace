@@ -16,6 +16,9 @@ function HomePage() {
 
         <p className='homepageCategoryHeading'>Categories</p>
         <div className='homepageCategories'>
+        <table>
+          <tr>
+            <th>
           <Link to='/category/rent'>
             <img
               src={rentCategoryImage}
@@ -23,7 +26,8 @@ function HomePage() {
               className='homepageCategoryImg'
             />
             <p className='homepageCategoryName'>Items for rent</p>
-          </Link>
+          </Link> </th>
+          <th>
           <Link to='/category/sale'>
             <img
               src={sellCategoryImage}
@@ -32,6 +36,9 @@ function HomePage() {
             />
             <p className='homepageCategoryName'>Items for sale</p>
           </Link>
+          </th>
+          </tr>
+          </table>
         </div>
       </main>
     </div>

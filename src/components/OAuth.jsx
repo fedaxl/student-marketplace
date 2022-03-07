@@ -197,7 +197,8 @@ function OAuth() {
       <th>
       <button className='socialIconDiv' onClick={onYahooClick}>
         <img className='socialIconImg' src={yahooIcon} alt='yahoo' />
-      </button></th>
+      </button>
+      </th>
       </tr>
       </table>
     </div>
