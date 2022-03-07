@@ -95,11 +95,6 @@ function Listing() {
         )}
 
         <ul className='listingDetailsList'>
-        <li>
-            {listing.description > ''
-              ? `${listing.description} Description`
-              : ''}
-          </li>
           <li>
             {listing.quantity > 1
               ? `${listing.quantity} Quantity`

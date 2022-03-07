@@ -20,7 +20,6 @@ function CreateListing() {
   const [formData, setFormData] = useState({
     type: 'sale',
     name: '',
-    description: '',
     quantity: 1,
     year: 2022,
     sold: false,
@@ -36,7 +35,6 @@ function CreateListing() {
   const {
     type,
     name,
-    description,
     quantity,
     year,
     sold,
@@ -253,18 +251,6 @@ function CreateListing() {
             value={name}
             onChange={onMutate}
             maxLength='32'
-            minLength='10'
-            required
-          />
-
-<label className='formLabel'>Description</label>
-          <input
-            className='formInputName'
-            type='text'
-            id='description'
-            value={description}
-            onChange={onMutate}
-            maxLength='400'
             minLength='10'
             required
           />
