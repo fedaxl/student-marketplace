@@ -18,12 +18,13 @@ function CreateListing() {
   const [geolocationEnabled, setGeolocationEnabled] = useState(false)
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
-    type: 'rent',
+    type: 'sale',
     name: '',
+    description: '',
     quantity: 1,
     year: 2022,
     sold: false,
-    address: '1600+Amphitheatre+Parkway,+Mountain+View,+CA',
+    address: 'WIT, Waterford',
     offer: false,
     regularPrice: 0,
     discountedPrice: 0,
@@ -35,6 +36,7 @@ function CreateListing() {
   const {
     type,
     name,
+    description,
     quantity,
     year,
     sold,
@@ -90,7 +92,8 @@ function CreateListing() {
 
     if (geolocationEnabled) {
       const response = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
+        `https://api.opencagedata.com/geocode/v1/json?q=${address}&key=${process.env.REACT_APP_OPENCAGE_GEOCODE_API}`
+        //`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
       )
 
       const data = await response.json()
@@ -111,6 +114,7 @@ function CreateListing() {
     } else {
       geolocation.lat = latitude
       geolocation.lng = longitude
+      console.log(latitude + " " + longitude)
     } 
 
     // Store image in firebase
@@ -176,7 +180,7 @@ function CreateListing() {
 
     const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
     setLoading(false)
-    toast.success('Listing saved')
+    toast.success('Item saved')
     navigate(`/category/${formDataCopy.type}/${docRef.id}`)
   }
 
@@ -249,6 +253,18 @@ function CreateListing() {
             value={name}
             onChange={onMutate}
             maxLength='32'
+            minLength='10'
+            required
+          />
+
+<label className='formLabel'>Description</label>
+          <input
+            className='formInputName'
+            type='text'
+            id='description'
+            value={description}
+            onChange={onMutate}
+            maxLength='400'
             minLength='10'
             required
           />

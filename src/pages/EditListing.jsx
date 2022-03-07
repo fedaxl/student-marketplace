@@ -21,6 +21,7 @@ function EditListing() {
   const [formData, setFormData] = useState({
     type: 'rent',
     name: '',
+    description: '',
     quantity: 1,
     year: 1,
     status: false,
@@ -36,6 +37,7 @@ function EditListing() {
   const {
     type,
     name,
+    description,
     quantity,
     year,
     sold,
@@ -281,6 +283,18 @@ function EditListing() {
             value={name}
             onChange={onMutate}
             maxLength='32'
+            minLength='10'
+            required
+          />
+
+          <label className='formLabel'>Description</label>
+          <input
+            className='formInputName'
+            type='text'
+            id='description'
+            value={description}
+            onChange={onMutate}
+            maxLength='400'
             minLength='10'
             required
           />

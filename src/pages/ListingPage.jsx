@@ -95,6 +95,11 @@ function Listing() {
         )}
 
         <ul className='listingDetailsList'>
+        <li>
+            {listing.description > ''
+              ? `${listing.description} Description`
+              : ''}
+          </li>
           <li>
             {listing.quantity > 1
               ? `${listing.quantity} Quantity`
@@ -112,7 +117,7 @@ function Listing() {
 
         <div className='leafletContainer'>
           <MapContainer
-            style={{ height: '100%', width: '100%' }}
+            style={{ height: '50%', width: '50%' }}
             center={[listing.geolocation.lat, listing.geolocation.lng]}
             zoom={13}
             scrollWheelZoom={false}
