@@ -17,6 +17,7 @@ function HomePage() {
         <p className='homepageCategoryHeading'>Categories</p>
         <div className='homepageCategories'>
         <table>
+          <thead>
           <tr>
             <th>
           <Link to='/category/rent'>
@@ -38,6 +39,7 @@ function HomePage() {
           </Link>
           </th>
           </tr>
+          </thead>
           </table>
         </div>
       </main>

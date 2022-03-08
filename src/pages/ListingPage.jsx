@@ -10,6 +10,7 @@ import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
 import Spinner from '../components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
+import addToCart from '../assets/png/add-to-cart.png'
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 function Listing() {
@@ -75,7 +76,7 @@ function Listing() {
 
       <div className='listingDetails'>
         <p className='listingName'>
-          {listing.name} - $
+          {listing.name} - €
           {listing.offer
             ? listing.discountedPrice
                 .toString()
@@ -85,9 +86,15 @@ function Listing() {
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
         </p>
         <p className='listingLocation'>{listing.location}</p>
-        <p className='listingType'>
+        <table><thead><tr><th>
+          <p className='listingType'>
           For {listing.type === 'rent' ? 'Rent' : 'Sale'}
-        </p>
+        </p></th>
+        <th> <button className='socialIconDiv'>
+        <img className='socialIconImg' src={addToCart} alt='Add To Cart' />
+      </button></th>
+      </tr></thead>
+      </table>
         {listing.offer && (
           <p className='discountPrice'>
             ${listing.regularPrice - listing.discountedPrice} discount
@@ -110,9 +117,9 @@ function Listing() {
 
         <p className='listingLocationTitle'>Location</p>
 
-        <div>
+        <div className='leafletContainer'>
           <MapContainer
-            style={{ height: '50%', width: '50%' }}
+            style={{ height: '100%', width: '100%' }}
             center={[listing.geolocation.lat, listing.geolocation.lng]}
             zoom={13}
             scrollWheelZoom={false}
