@@ -10,7 +10,8 @@ import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
 import Spinner from '../components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
-import addToCart from '../assets/png/add-to-cart.png'
+import paypalIcon from '../assets/svg/paypalIcon.svg'
+
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
 function Listing() {
@@ -86,14 +87,22 @@ function Listing() {
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
         </p>
         <p className='listingLocation'>{listing.location}</p>
-        <table><thead><tr><th>
-          <p className='listingType'>
-          For {listing.type === 'rent' ? 'Rent' : 'Sale'}
-        </p></th>
-        <th> <button className='socialIconDiv'>
-        <img className='socialIconImg' src={addToCart} alt='Add To Cart' />
+        <table>
+          <thead>
+            <tr>
+             <th>
+               <p className='listingType'>
+               For {listing.type === 'rent' ? 'Rent' : 'Sale'}
+              </p>
+              </th>
+            </tr>
+        <tr>
+        <th>PayPal</th>
+          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout'}>
+        <img className='socialIconImg' src={paypalIcon} alt='Add To Cart' />
       </button></th>
-      </tr></thead>
+      </tr>
+     </thead>
       </table>
         {listing.offer && (
           <p className='discountPrice'>

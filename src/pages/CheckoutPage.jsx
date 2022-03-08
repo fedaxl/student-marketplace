@@ -1,9 +1,14 @@
+
 import React from 'react'
-import { PayPalScriptProvider, PayPalButtons } from react-paypal-js
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
 
 function CheckoutPage (){
     return (
     <div>
+         <header>
+        <p className='pageHeader'>Checkout with PayPal</p>
+      </header>
+        <main>
         <PayPalScriptProvider
         options={{"client-id":"AUQQsoi73tMNDoF5eEdsHu8_uRfvum8GN3ZoBTUo5NLQkN_2mtrtd6XIDdDpyiEnDakDCBKY2Txl2m1m"}}>
             <PayPalButtons
@@ -12,21 +17,21 @@ function CheckoutPage (){
                 purchase_units: [
                     {
                         amount: {
-                            value: listing.regularPrice,
+                            value: 10.00,
                         },
                     },
                 ],
             });
             }}
-            onApprove={(data, action) => {
+            onApprove={(data, actions) => {
                 return actions.order.capture().then(function (details){
                     alert ("Transaction completed by " + details.payer.name.give_name
                     );
                 });
             }}
     />
-
-        </PayPalScriptProvider>
+        </PayPalScriptProvider>        
+        </main>
     </div>
     );
 }

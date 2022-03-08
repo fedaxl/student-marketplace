@@ -15,6 +15,7 @@ import CreateListing from './pages/CreateListing'
 import EditListing from './pages/EditListing'
 import Listing from './pages/ListingPage'
 import Contact from './pages/ContactPage'
+import CheckoutPage from './pages/CheckoutPage'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/create-listing' element={<CreateListing />} />
           <Route path='/edit-listing/:listingId' element={<EditListing />} />
+          <Route path='/checkout' element={<CheckoutPage />} />
           <Route
             path='/category/:categoryName/:listingId'
             element={<Listing />}
