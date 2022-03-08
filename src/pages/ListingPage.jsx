@@ -110,7 +110,7 @@ function Listing() {
 
         <p className='listingLocationTitle'>Location</p>
 
-        <div className='leafletContainer'>
+        <div>
           <MapContainer
             style={{ height: '50%', width: '50%' }}
             center={[listing.geolocation.lat, listing.geolocation.lng]}

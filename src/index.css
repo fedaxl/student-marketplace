@@ -550,6 +550,8 @@ button {
   font-size: 1.25rem;
 }
 
+/*
+
 .leafletContainer {
   width: 100%;
   height: 200px;
@@ -561,6 +563,8 @@ button {
     height: 400px;
   }
 }
+
+*/
 
 .linkCopied {
   position: fixed;
