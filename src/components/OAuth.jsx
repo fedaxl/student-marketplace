@@ -165,6 +165,7 @@ function OAuth() {
     }
   }
 
+
   //Apple requires to be part of their Apple Developer Program so this option won't be available.
 
   return (
@@ -201,6 +202,7 @@ function OAuth() {
       </th>
       </tr>
       </table>
+      
     </div>
   )
 }

@@ -13,6 +13,7 @@ import { db } from '../firebase.config'
 import { toast } from 'react-toastify'
 import Spinner from '../components/Spinner'
 import ListingItem from '../components/ListingItem'
+import addToCart from '../assets/png/add-to-cart.png'
 
 function Category() {
   const [listings, setListings] = useState(null)

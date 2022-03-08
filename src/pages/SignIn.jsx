@@ -93,7 +93,7 @@ function SignIn() {
         <OAuth />
         <div>
         Don't have an account? 
-        <Link to='/sign-up' className=' registerLink'>
+        <Link to='/sign-up' className='registerLink'>
           Sign Up Instead
         </Link>
       </div></div>
