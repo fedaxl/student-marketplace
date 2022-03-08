@@ -8,26 +8,15 @@ function HomePage() {
   return (
     <div className='homepage'>
       <header>
-        <p className='pageHeader'>The Student Marketplace</p>
+        <p className='pageHeaderHP'>The Student Marketplace</p>
       </header>
 
       <main>
-        <Slider />
-
-        <p className='homepageCategoryHeading'>Categories</p>
+        <p className='homepageCategoryHeading'>  This is the first Marketplace for Students in Ireland, you can either Rent, Buy or Sell your items</p>
         <div className='homepageCategories'>
-        <table>
+        <table className='tableHomepage'>
           <thead>
           <tr>
-            <th>
-          <Link to='/category/rent'>
-            <img
-              src={rentCategoryImage}
-              alt='rent'
-              className='homepageCategoryImg'
-            />
-            <p className='homepageCategoryName'>Items for rent</p>
-          </Link> </th>
           <th>
           <Link to='/category/sale'>
             <img
@@ -38,9 +27,19 @@ function HomePage() {
             <p className='homepageCategoryName'>Items for sale</p>
           </Link>
           </th>
+            <th>
+          <Link to='/category/rent'>
+            <img
+              src={rentCategoryImage}
+              alt='rent'
+              className='homepageCategoryImg'
+            />
+            <p className='homepageCategoryName'>Items for rent</p>
+          </Link> </th>
           </tr>
           </thead>
           </table>
+          <Slider />
         </div>
       </main>
     </div>            

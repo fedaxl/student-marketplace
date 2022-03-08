@@ -47,7 +47,7 @@ function Slider() {
   return (
     listings && (
       <>
-        <p className='homepageHeading'>Recommended</p>
+        <p className='homepageHeading'>Last Recommended Items:</p>
 
         <Swiper slidesPerView={1} pagination={{ clickable: true }}>
           {listings.map(({ data, id }) => (
@@ -58,7 +58,8 @@ function Slider() {
               <div
                 style={{
                   background: `url(${data.imgUrls[0]}) center no-repeat`,
-                  backgroundSize: 'cover',
+                  backgroundColor: 'white',
+                  backgroundSize: 'contain',
                 }}
                 className='swiperSlideDiv'
               >

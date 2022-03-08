@@ -5,14 +5,14 @@ function CheckoutPage (){
     return (
     <div>
         <PayPalScriptProvider
-        options={{"client-id":"insert here client id"}}>
+        options={{"client-id":"AUQQsoi73tMNDoF5eEdsHu8_uRfvum8GN3ZoBTUo5NLQkN_2mtrtd6XIDdDpyiEnDakDCBKY2Txl2m1m"}}>
             <PayPalButtons
             createOrder={(data, actions) => {
                 return actions.order.create({
                 purchase_units: [
                     {
                         amount: {
-                            value: "13.99",
+                            value: listing.regularPrice,
                         },
                     },
                 ],

@@ -51,6 +51,7 @@ function Offers() {
         setLoading(false)
       } catch (error) {
         toast.error('Could not fetch listings')
+        console.log(error)
       }
     }
 
@@ -91,6 +92,7 @@ function Offers() {
       setLoading(false)
     } catch (error) {
       toast.error('Could not fetch listings')
+      console.log(error)
     }
   }
 
