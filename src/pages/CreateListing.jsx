@@ -379,7 +379,7 @@ function CreateListing() {
               id='regularPrice'
               value={regularPrice}
               onChange={onMutate}
-              min='50'
+              min='1'
               max='750000000'
               required
             />
@@ -395,7 +395,7 @@ function CreateListing() {
                 id='discountedPrice'
                 value={discountedPrice}
                 onChange={onMutate}
-                min='50'
+                min='1'
                 max='750000000'
                 required={offer}
               />
