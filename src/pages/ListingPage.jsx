@@ -114,7 +114,7 @@ function Listing() {
         </ul>
 
         <table>
-          <thead><h3>Methods of Payments</h3>
+          <thead><h2>Methods of Payments</h2>
         <tr>
         <th>Checkout with PayPal</th>
           <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout-paypal'}>
