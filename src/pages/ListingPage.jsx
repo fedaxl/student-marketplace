@@ -11,6 +11,8 @@ import { db } from '../firebase.config'
 import Spinner from '../components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
 import paypalIcon from '../assets/svg/paypalIcon.svg'
+import stripeIcon from '../assets/svg/stripeIcon.svg'
+import braintreeIcon from '../assets/png/braintreeIcon.png'
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
@@ -87,23 +89,10 @@ function Listing() {
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
         </p>
         <p className='listingLocation'>{listing.location}</p>
-        <table>
-          <thead>
-            <tr>
-             <th>
+        
                <p className='listingType'>
                For {listing.type === 'rent' ? 'Rent' : 'Sale'}
               </p>
-              </th>
-            </tr>
-        <tr>
-        <th>PayPal</th>
-          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout'}>
-        <img className='socialIconImg' src={paypalIcon} alt='Add To Cart' />
-      </button></th>
-      </tr>
-     </thead>
-      </table>
         {listing.offer && (
           <p className='discountPrice'>
             ${listing.regularPrice - listing.discountedPrice} discount
@@ -123,6 +112,25 @@ function Listing() {
           </li>
           <li>{listing.sold && 'Item Sold?'}</li>
         </ul>
+
+        <table>
+          <thead><h3>Methods of Payments</h3>
+        <tr>
+        <th>Checkout with PayPal</th>
+          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout-paypal'}>
+        <img className='socialIconImg' src={paypalIcon} alt='Add To Cart' />
+      </button></th>
+        <th>Checkout with Braintree</th>
+          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout'}>
+        <img className='socialIconImg' src={braintreeIcon} alt='Add To Cart' />
+      </button></th>
+        <th>Checkout with Stripe</th>
+          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout'}>
+        <img className='socialIconImg' src={stripeIcon} alt='Add To Cart' />
+      </button></th>
+      </tr>
+     </thead>
+      </table>
 
         <p className='listingLocationTitle'>Location</p>
 
