@@ -1,6 +1,6 @@
-
 import React from 'react'
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
+
 
 function CheckoutPage (){
     return (
@@ -18,6 +18,7 @@ function CheckoutPage (){
                     {
                         amount: {
                             value: 10.00,
+                            currency_code: EUR,
                         },
                     },
                 ],
@@ -25,8 +26,8 @@ function CheckoutPage (){
             }}
             onApprove={(data, actions) => {
                 return actions.order.capture().then(function (details){
-                    alert ("Transaction completed by " + details.payer.name.give_name
-                    );
+                    alert ("Transaction completed! ID: " + details.id);
+                    console.log(details);
                 });
             }}
     />
