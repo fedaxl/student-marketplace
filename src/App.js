@@ -16,12 +16,14 @@ import EditListing from './pages/EditListing'
 import Listing from './pages/ListingPage'
 import Contact from './pages/ContactPage'
 import CheckoutPage from './pages/CheckoutPayPal'
+import BraintreeCheckout from './pages/CheckoutBraintree'
 
 
 function App() {
   return (
     <>
       <Router>
+      <Navbar />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/offers' element={<Offers />} />
@@ -35,13 +37,14 @@ function App() {
           <Route path='/create-listing' element={<CreateListing />} />
           <Route path='/edit-listing/:listingId' element={<EditListing />} />
           <Route path='/checkout-paypal' element={<CheckoutPage />} />
+          <Route path='/checkout-braintree' element={<BraintreeCheckout/>} />
           <Route
             path='/category/:categoryName/:listingId'
             element={<Listing />}
           />
           <Route path='/contact/:sellerdId' element={<Contact />} />
         </Routes>
-        <Navbar />
+
       </Router>
 
       <ToastContainer />

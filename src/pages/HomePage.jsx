@@ -8,13 +8,13 @@ function HomePage() {
   return (
     <div className='homepage'>
       <header>
-        <p className='pageHeaderHP'>The Student Marketplace</p>
+        <p className='pageHeaderHP'>$Marketplace</p>
       </header>
 
       <main>
-        <p className='homepageCategoryHeading'>  This is the first Marketplace for Students in Ireland, you can either Rent, Buy or Sell your items</p>
+        <p className='homepageCategoryHeading'> This is the first Marketplace for Colleges in Ireland, you can either Rent, Buy or Sell your items</p>
         <div className='homepageCategories'>
-        <table className='tableHomepage'>
+        <table className='tableHomepage' >
           <thead>
           <tr>
           <th>

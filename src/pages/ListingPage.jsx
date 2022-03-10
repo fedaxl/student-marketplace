@@ -121,7 +121,7 @@ function Listing() {
         <img className='socialIconImg' src={paypalIcon} alt='Add To Cart' />
       </button></th>
         <th>Checkout with Braintree</th>
-          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout'}>
+          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout-braintree'}>
         <img className='socialIconImg' src={braintreeIcon} alt='Add To Cart' />
       </button></th>
         <th>Checkout with Stripe</th>

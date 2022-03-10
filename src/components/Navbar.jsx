@@ -15,12 +15,11 @@ function Navbar() {
   }
 
   return (
-    <footer className='navbar'>
       <nav className='navbarNav'>
         <ul className='navbarListItems'>
           <li className='navbarListItem' onClick={() => navigate('/')}>
             <ExploreIcon
-              fill={pathMatchRoute('/') ? '#004268' : '#ffffff'}
+              fill={pathMatchRoute('/') ? '#f03264' : '#ffffff'}
               width='36px'
               height='36px'
             />
@@ -31,12 +30,12 @@ function Navbar() {
                   : 'navbarListItemName'
               }
             >
-              The Student Marketplace
+              HomePage
             </p>
           </li>
           <li className='navbarListItem' onClick={() => navigate('/offers')}>
             <OfferIcon
-              fill={pathMatchRoute('/offers') ? '#004268' : '#ffffff'}
+              fill={pathMatchRoute('/offers') ? '#f03264' : '#ffffff'}
               width='36px'
               height='36px'
             />
@@ -52,7 +51,7 @@ function Navbar() {
           </li>
           <li className='navbarListItem' onClick={() => navigate('/profile')}>
             <PersonOutlineIcon
-              fill={pathMatchRoute('/profile') ? '#004268' : '#ffffff'}
+              fill={pathMatchRoute('/profile') ? '#f03264' : '#ffffff'}
               width='36px'
               height='36px'
             />
@@ -63,12 +62,11 @@ function Navbar() {
                   : 'navbarListItemName'
               }
             >
-              Profile
+              My Account
             </p>
           </li>
         </ul>
       </nav>
-    </footer>
   )
 }
 

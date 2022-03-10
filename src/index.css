@@ -138,11 +138,11 @@ button {
 .pageHeaderHP {
   font-size: 2rem;
   font-weight: 800;
-  background-color: #1c2cbb;
+  background-color: #bb1c44;
   color: #f2f4f8;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   margin-top: 0%;
 }
 
@@ -152,13 +152,13 @@ button {
   font-weight: 800;
 }
 
+
 .navbar {
   position: fixed;
   left: 0;
   bottom: 0;
   right: 0;
   height: 85px;
-  background-color:#629fee;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -167,8 +167,10 @@ button {
 
 .navbarNav {
   width: 100%;
-  margin-top: 0.75rem;
+  margin-top: 0;
+  padding-top: 0.75em;
   overflow-y: hidden;
+  background-color: #191942;
 }
 
 .navbarListItems {
@@ -194,7 +196,7 @@ button {
   color: #ffffff;
 }
 .navbarListItemNameActive {
-  color: #004268;
+  color: #f03264;
 }
 
 .nameInput {
@@ -840,4 +842,8 @@ button {
 .tableHomepage {
   width: 100%;
   background-color: #ffffff;
+  padding-left: 10px;
+  padding-right: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }

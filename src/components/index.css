@@ -1,0 +1,49 @@
+
+.productInfoRow {
+    margin-bottom: 10px
+  }
+  
+  .productHeaderRow {
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .productInfoColumn {
+    display: flex;
+    align-items: center;
+  }
+  
+  .productInfoColumnCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn {
+    font-size: large;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .btn:hover {
+    font-size: large;
+    color: white;
+    background-color: rgb(0, 0, 0) !important;
+  }
+  
+  .braintreePayButton {
+    margin-left: auto;
+    display: flex;
+  }
+  
+  #braintree-drop-in-div {
+    min-height: 150px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
