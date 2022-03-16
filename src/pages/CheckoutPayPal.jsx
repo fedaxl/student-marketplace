@@ -1,7 +1,6 @@
 import React from 'react'
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
 
-
 function CheckoutPage (){
     return (
     <div>
@@ -18,7 +17,6 @@ function CheckoutPage (){
                     {
                         amount: {
                             value: 10.00,
-                            currency_code: EUR,
                         },
                     },
                 ],

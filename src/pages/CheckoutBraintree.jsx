@@ -14,7 +14,7 @@ function BraintreeCheckout() {
                             disabled={showBraintreeDropIn}
                         >
                             {
-                                "Go to Checkout"
+                                "Go to Braintree Checkout"
                             }
                         </Button>
             <BraintreeDropIn

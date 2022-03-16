@@ -12,6 +12,7 @@ import Spinner from '../components/Spinner'
 import shareIcon from '../assets/svg/shareIcon.svg'
 import paypalIcon from '../assets/svg/paypalIcon.svg'
 import stripeIcon from '../assets/svg/stripeIcon.svg'
+import adyenIcon from '../assets/svg/adyenIcon.svg'
 import braintreeIcon from '../assets/png/braintreeIcon.png'
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
@@ -123,10 +124,14 @@ function Listing() {
         <th>Checkout with Braintree</th>
           <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout-braintree'}>
         <img className='socialIconImg' src={braintreeIcon} alt='Add To Cart' />
-      </button></th>
+      </button></th></tr><tr>
         <th>Checkout with Stripe</th>
-          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout'}>
+          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout-stripe'}>
         <img className='socialIconImg' src={stripeIcon} alt='Add To Cart' />
+      </button></th>
+      <th>Checkout with Adyen</th>
+          <th><button className='socialIconDiv'>
+        <img className='socialIconImg' src={adyenIcon} alt='Add To Cart' />
       </button></th>
       </tr>
      </thead>

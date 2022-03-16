@@ -17,7 +17,7 @@ import Listing from './pages/ListingPage'
 import Contact from './pages/ContactPage'
 import CheckoutPage from './pages/CheckoutPayPal'
 import BraintreeCheckout from './pages/CheckoutBraintree'
-
+import StripeCheckout from './pages/CheckoutStripe'
 
 function App() {
   return (
@@ -38,6 +38,7 @@ function App() {
           <Route path='/edit-listing/:listingId' element={<EditListing />} />
           <Route path='/checkout-paypal' element={<CheckoutPage />} />
           <Route path='/checkout-braintree' element={<BraintreeCheckout/>} />
+          <Route path='/checkout-stripe' element={<StripeCheckout/>} />
           <Route
             path='/category/:categoryName/:listingId'
             element={<Listing />}
