@@ -61,10 +61,8 @@ function BraintreeDropIn(props) {
                 
                                 alert(`Payment completed with nonce=${paymentMethodNonce}`);
 
-                                paymentTransaction({nonce: payload.nonce, amount: 10.00});
-
                                 onPaymentCompleted(
-                                     alert(`Payment completed with transaction=${payload.transaction}`)
+                                     alert(`Payment completed with transaction=${paymentMethodNonce}`)
                                    );
                                 }
                             });

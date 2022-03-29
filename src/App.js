@@ -18,6 +18,7 @@ import Contact from './pages/ContactPage'
 import CheckoutPage from './pages/CheckoutPayPal'
 import BraintreeCheckout from './pages/CheckoutBraintree'
 import StripeCheckout from './pages/CheckoutStripe'
+import AdyenCheckout from './pages/CheckoutAdyen'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path='/checkout-paypal' element={<CheckoutPage />} />
           <Route path='/checkout-braintree' element={<BraintreeCheckout/>} />
           <Route path='/checkout-stripe' element={<StripeCheckout/>} />
+          <Route path='/checkout-adyen' element={<AdyenCheckout/>} />
           <Route
             path='/category/:categoryName/:listingId'
             element={<Listing />}

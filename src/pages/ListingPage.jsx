@@ -130,7 +130,7 @@ function Listing() {
         <img className='socialIconImg' src={stripeIcon} alt='Add To Cart' />
       </button></th>
       <th>Checkout with Adyen</th>
-          <th><button className='socialIconDiv'>
+          <th><button className='socialIconDiv' onClick={event =>  window.location.href='/checkout-adyen'}>
         <img className='socialIconImg' src={adyenIcon} alt='Add To Cart' />
       </button></th>
       </tr>
