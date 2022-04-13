@@ -50,6 +50,46 @@
             "name": "PayPal",
             "supportsRecurring": true,
             "type": "paypal"
+        },
+        {
+            "name": "Amazon Pay",
+            "supportsRecurring": true,
+            "type": "amazonpay"
+        },
+        {
+            "name": "ApplePay",
+            "supportsRecurring": false,
+            "type": "apple pay"
+        },
+        {
+            "name": "Atome",
+            "supportsRecurring": true,
+            "type": "atome"
+        },
+        {
+            "name": "Sofort",
+            "supportsRecurring": true,
+            "type": "directEbanking"
+        },
+        {
+            "name": "Alipay",
+            "supportsRecurring": true,
+            "type": "alipay"
+        },
+        {
+            "name": "WeChat Pay",
+            "supportsRecurring": true,
+            "type": "wechatpayQR"
+        },
+        {
+            "name": "Google Pay",
+            "supportsRecurring": true,
+            "type": "googlepay"
+        },
+        {
+            "name": "Klarna",
+            "supportsRecurring": true,
+            "type": "klarna_paynow"
         }
     ]
 }

@@ -19,8 +19,9 @@ import CheckoutPage from './pages/CheckoutPayPal'
 import BraintreeCheckout from './pages/CheckoutBraintree'
 import StripeCheckout from './pages/CheckoutStripe'
 import AdyenCheckout from './pages/CheckoutAdyen'
-
+ 
 function App() {
+
   return (
     <>
       <Router>
@@ -47,9 +48,7 @@ function App() {
           />
           <Route path='/contact/:sellerdId' element={<Contact />} />
         </Routes>
-
       </Router>
-
       <ToastContainer />
     </>
   )

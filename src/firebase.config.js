@@ -20,4 +20,5 @@ const db = initializeFirestore(app, {
   experimentalForceLongPolling: true,
 });
 
+
 export {db};

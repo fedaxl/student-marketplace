@@ -6,6 +6,7 @@ import OAuth from '../components/OAuth'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
 
+
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
@@ -28,11 +29,11 @@ function SignIn() {
 
     try {
       const auth = getAuth()
-
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
+     
+     const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
       )
 
       if (userCredential.user) {

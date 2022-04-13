@@ -61,8 +61,9 @@ function Navbar() {
                   ? 'navbarListItemNameActive'
                   : 'navbarListItemName'
               }
-            >
+            > 
               My Account
+          
             </p>
           </li>
         </ul>

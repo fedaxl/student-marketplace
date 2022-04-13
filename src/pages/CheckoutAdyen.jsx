@@ -3,6 +3,7 @@ import paymentMethodsSample from '../paymentMethodsSample.json';
 
 //const MERCHANT_ACCOUNT = process.env.MERCHANT_ACCOUNT;
 const API_KEY = 'pub.v2.8016473447373239.aHR0cDovL2xvY2FsaG9zdDozMDAw.KiWmctbaLhycxuZOHzPH3Z7oEHrbhDAPEueD76AAr4s';
+//const API_KEY = 'pub.v2.8016473447373239.aHR0cHM6Ly9sb2NhbGhvc3Q6MzAwMA.KAYPK_Ae_1q_A5cGt2mMZCQA38tPyf2ksmD0urUf2Ag';
 
 class AdyenCheckout extends Component {
   constructor(props) {
@@ -16,15 +17,15 @@ class AdyenCheckout extends Component {
 
   getPaymentMethods() {
     fetch('/paymentMethods', {
-      // method: 'GET',
-      // body: JSON.stringify({
-      //   "merchantAccount": MERCHANT_ACCOUNT,
-      //   "countryCode": "US",
-      //   "shopperLocale": "en-US",
-      //   "amount": {
-      //     "currency": "USD",
-      //     "value": 1000
-      //   }
+       //method: 'GET',
+       //body: JSON.stringify({
+       //  "merchantAccount": MERCHANT_ACCOUNT,
+       //  "countryCode": "IE",
+        // "shopperLocale": "en-US",
+        // "amount": {
+        // "currency": "EUR",
+         //  "value": 10.00
+      //  }
       // })
     }
     )
