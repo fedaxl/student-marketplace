@@ -19,7 +19,7 @@ import CheckoutPage from './pages/CheckoutPayPal'
 import BraintreeCheckout from './pages/CheckoutBraintree'
 import StripeCheckout from './pages/CheckoutStripe'
 import AdyenCheckout from './pages/CheckoutAdyen'
- 
+
 function App() {
 
   return (

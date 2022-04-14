@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js'
+import { Euro } from '@material-ui/icons';
 
 
 function CheckoutPage (){
+
     return (
     <div>
          <header>
@@ -18,6 +20,7 @@ function CheckoutPage (){
                     {
                         amount: {
                             value: 10.00,
+                            //value: {listings.regularPrice},
                         },
                     },
                 ],
