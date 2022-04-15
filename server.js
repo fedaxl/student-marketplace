@@ -113,7 +113,7 @@ config.publicKey = '10001|B54B35692FFACF2E90B5B75387F506FE0891E58A87A428A34F1ABA
 client.setEnvironment("TEST");
 
 
-app.listen(port, () => {
-  console.log('Server started on: ' + port);
+app.listen(PORT, () => {
+  console.log('Server started on: ' + PORT);
 });
 };
