@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import './index.css';
 import dropin from "braintree-web-drop-in"
 import {Button} from "reactstrap";
+import axios from "axios";
 
 function BraintreeDropIn(props) {
     const { show, onPaymentCompleted } = props;
@@ -58,12 +59,25 @@ function BraintreeDropIn(props) {
 
                                     // TODO: use the paymentMethodNonce to
                                     //  call you server and complete the payment here
-                         
-                
-                                alert(`Payment completed with nonce=${paymentMethodNonce}`);
+                                    axios.post("http://localhost:4242/confirmBraintree/", {
+                                        amount: "10.00",
+                                        paymentMethodNonce: paymentMethodNonce,
+                                            options: {
+          // This option requests the funds from the transaction once it has been
+          // authorized successfully
+                                             submitForSettlement: true,
+        }})
+        .then((result) => {
+          alert("Your payment was successful");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+                      
+        //alert(`Payment completed with nonce=${paymentMethodNonce}`);
 
-                                onPaymentCompleted(
-                                     alert(`Payment completed with transaction=${paymentMethodNonce}`)
+            onPaymentCompleted(
+                                     alert(`Payment completed for nonce=${paymentMethodNonce}`)
                                    );
             
                                 }

@@ -8,6 +8,7 @@ const API_KEY = 'pub.v2.8016473447373239.aHR0cDovL2xvY2FsaG9zdDozMDAw.KiWmctbaLh
 class AdyenCheckout extends Component {
   constructor(props) {
     super(props);
+    // eslint-disable-next-line
     this.state = {
       paymentMethods: [],
       isLoading: true
