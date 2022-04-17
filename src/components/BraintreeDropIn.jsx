@@ -59,7 +59,7 @@ function BraintreeDropIn(props) {
 
                                     // TODO: use the paymentMethodNonce to
                                     //  call you server and complete the payment here
-                                    axios.post("https://s-marketplace.herokuapp.com:4242/confirmBraintree/", {
+                                    axios.post("/confirmBraintree/", {
                                         amount: "10.00",
                                         paymentMethodNonce: paymentMethodNonce,
                                             options: {
