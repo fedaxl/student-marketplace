@@ -6,6 +6,7 @@ function CheckoutPage (){
 
     return (
     <div>
+    <div className='pageContainer'>
          <header>
         <p className='pageHeader'>Checkout with PayPal</p>
       </header>
@@ -33,7 +34,7 @@ function CheckoutPage (){
     />
         </PayPalScriptProvider>        
         </main>
-    </div>
+    </div></div>
     );
 }
 
