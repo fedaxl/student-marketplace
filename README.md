@@ -1,23 +1,41 @@
-# Getting Started with Create React App
+# $Marketplace - Login and Pay
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+$Marketplace is a web platform that allows students to sell, rent, or buy items online.
+It is a mobile-responsive platform and it was built using React.js, a Node.js server and Firebase for storing data and use functions.
+Rather than focus on selling and purchasing items, this project was about researching new methods for user authentication and payment methods available in Ireland.
+Users can either create their own account or choose from six alternative OAuth methods. Using $Marketplace's checkout system, you can use the most popular methods of payment at the time of the college project.
 
-## Available Scripts
+### Screenshots
+![Presentation](https://user-images.githubusercontent.com/22814086/163734615-b85f3049-c287-414a-bfd7-3af99777e9ec.jpg)
 
-In the project directory, you can run:
+## Firebase and Sign-In providers
+Create your app at https://console.firebase.google.com/ > go to Authentication > Sign-In method > Add new provider (you will have to create a set of credentials which each individual provider)
+![Firebase_Authentication](https://user-images.githubusercontent.com/22814086/163734922-3329cdac-3f15-4d8f-b6f3-f042fa68fe08.jpg)
 
-### `npm start`
+Configure the Firestore Database for storing and managing your "listings" and "users" collections. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Methods of payment
 
+For this project, I have attempted to integrate PayPal, Stripe, Braintree Drop-In and Adyen methods of payment, which are currently the most common options available in Ireland at the time of this project. 
+You will have to register and retrieve your API credentials with each providers. 
+For this project all the integrations are running in test/sandbox environment. 
+
+## Deployment on Heroku
+
+This project has been deployed using Git (from terminal: git push heroku master) to Heroku: https://s-marketplace.herokuapp.com/
+
+Buildpacks:
+https://buildpack-registry.s3.amazonaws.com/buildpacks/mars/create-react-app.tgz
+and heroku/nodejs
+
+Don't forget to configure your env variables!
+
+### Running on Localhost: 
+
+Use `npm start` to run the app locally, [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use `node server.js` to start the server on port 4242.
 
 ### `npm run build`
 
@@ -27,44 +45,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
