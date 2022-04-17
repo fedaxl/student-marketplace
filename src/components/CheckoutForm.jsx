@@ -25,7 +25,7 @@ const CheckoutForm = () => {
       // you can pass the token and payment data to the backend to complete
       // the charge
       axios
-        .post("http://localhost:4242/api/stripe/charge", {
+        .post("https://s-marketplace.herokuapp.com:4242/api/stripe/charge", {
           token: token.id,
           currency: "EUR",
           price: 1000, // or 10 pounds (10*100). Stripe charges with the smallest price unit allowed
