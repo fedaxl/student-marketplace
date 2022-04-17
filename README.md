@@ -1,6 +1,6 @@
-# $Marketplace - Login and Pay
+# $marketplace - Login and Pay
 
-$Marketplace is a web platform that allows students to sell, rent, or buy items online.
+$marketplace is a web platform that allows students to sell, rent, or buy items online.
 It is a mobile-responsive platform and it was built using React.js, a Node.js server and Firebase for storing data and use functions.
 Rather than focus on selling and purchasing items, this project was about researching new methods for user authentication and payment methods available in Ireland.
 Users can either create their own account or choose from six alternative OAuth methods. Using $Marketplace's checkout system, you can use the most popular methods of payment at the time of the college project.
