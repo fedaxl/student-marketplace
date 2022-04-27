@@ -15,7 +15,14 @@ const braintree = require("braintree");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "build")));
 
+/* ################# CLIENT ENDPOINTS ###################### */
+
+// Handles any requests that doesn't match the above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 const PORT = process.env.PORT || 4242;
 
